@@ -1,4 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://4kpm6gxjisy0"]
+[gd_scene load_steps=11 format=3 uid="uid://4kpm6gxjisy0"]
+
+[ext_resource type="PackedScene" uid="uid://ctawk608inmq7" path="res://assets/steve.tscn" id="1_f3ibi"]
+[ext_resource type="Script" path="res://scripts/steve.gd" id="2_uqi6x"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_nqyfq"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -20,7 +23,11 @@ glow_enabled = true
 [sub_resource type="BoxShape3D" id="BoxShape3D_iulns"]
 size = Vector3(30, 1, 30)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3nxjq"]
+albedo_color = Color(0.498039, 0.435294, 0.207843, 1)
+
 [sub_resource type="BoxMesh" id="BoxMesh_41lfq"]
+material = SubResource("StandardMaterial3D_3nxjq")
 size = Vector3(30, 1, 30)
 
 [node name="Node3D" type="Node3D"]
@@ -33,7 +40,7 @@ transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75
 shadow_enabled = true
 
 [node name="Box" type="RigidBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.25327, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.14528, 7.15477, -0.447701)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Box"]
 shape = SubResource("BoxShape3D_7o21i")
@@ -45,10 +52,13 @@ mesh = SubResource("BoxMesh_twler")
 transform = Transform3D(1, 0, 0, 0, 0.982011, 0.188821, 0, -0.188821, 0.982011, 0.00386858, 2.71568, 5.58379)
 
 [node name="Floor" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.355718, 3.44075)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Floor"]
 shape = SubResource("BoxShape3D_iulns")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Floor"]
 mesh = SubResource("BoxMesh_41lfq")
+
+[node name="Steve" parent="." instance=ExtResource("1_f3ibi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+script = ExtResource("2_uqi6x")

@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://dyalft4sf2e28"]
+
+[ext_resource type="Texture2D" uid="uid://cdbrjj8dpai07" path="res://imports/playerball_luxo.png" id="1_kesxe"]
+
+[resource]
+resource_name = "luxoMaterial"
+cull_mode = 2
+albedo_texture = ExtResource("1_kesxe")
+roughness = 0.25

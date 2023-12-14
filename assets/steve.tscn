@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://ctawk608inmq7"]
+
+[ext_resource type="Material" uid="uid://dyalft4sf2e28" path="res://imports/luxoMaterial.tres" id="1_2ys2i"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_00g3l"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_vy06x"]
+
+[node name="Steve" type="CharacterBody3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_00g3l")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+material_override = ExtResource("1_2ys2i")
+mesh = SubResource("SphereMesh_vy06x")
