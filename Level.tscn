@@ -1,7 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://4kpm6gxjisy0"]
+[gd_scene load_steps=12 format=3 uid="uid://4kpm6gxjisy0"]
 
 [ext_resource type="PackedScene" uid="uid://ctawk608inmq7" path="res://assets/steve.tscn" id="1_f3ibi"]
 [ext_resource type="Script" path="res://scripts/steve.gd" id="2_uqi6x"]
+[ext_resource type="Script" path="res://scripts/Camera.gd" id="3_i7eqc"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_nqyfq"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -48,9 +49,6 @@ shape = SubResource("BoxShape3D_7o21i")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Box"]
 mesh = SubResource("BoxMesh_twler")
 
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.982011, 0.188821, 0, -0.188821, 0.982011, 0.00386858, 2.71568, 5.58379)
-
 [node name="Floor" type="StaticBody3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Floor"]
@@ -62,3 +60,7 @@ mesh = SubResource("BoxMesh_41lfq")
 [node name="Steve" parent="." instance=ExtResource("1_f3ibi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 script = ExtResource("2_uqi6x")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.857023, 0.515277, 0, -0.515277, 0.857023, 0, 6, 5)
+script = ExtResource("3_i7eqc")

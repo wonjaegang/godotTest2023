@@ -14,6 +14,11 @@ config/name="Godot Test 2023"
 config/features=PackedStringArray("4.2", "Mobile")
 config/icon="res://icon.svg"
 
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=720
+
 [rendering]
 
 renderer/rendering_method="mobile"

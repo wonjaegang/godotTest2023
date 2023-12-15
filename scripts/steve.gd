@@ -10,9 +10,10 @@ func _physics_process(delta):
             isTouching = true
         else:
             var currentTouchXY = get_viewport().get_mouse_position()
-            var angle = firstTouchXY.angle_to_point(currentTouchXY)
-            velocity.x = cos(angle) * SPEED
-            velocity.z = sin(angle) * SPEED
+            if currentTouchXY != firstTouchXY:
+                var angle = firstTouchXY.angle_to_point(currentTouchXY)
+                velocity.x = cos(angle) * SPEED
+                velocity.z = sin(angle) * SPEED
             
     else:
         velocity = lerp(velocity, Vector3(0, 0, 0), 0.2)
@@ -20,8 +21,6 @@ func _physics_process(delta):
     move_and_slide()
     $MeshInstance3D.rotate_z(-velocity.x / scale.x * 2 * delta)
     $MeshInstance3D.rotate_x(velocity.z / scale.x * 2 * delta)
-    print(scale.x)
-    print(delta)
     
     
     
