@@ -1,6 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://4kpm6gxjisy0"]
+[gd_scene load_steps=14 format=3 uid="uid://4kpm6gxjisy0"]
 
+[ext_resource type="Texture2D" uid="uid://dss6gwfvmne3m" path="res://icon.svg" id="1_6150d"]
 [ext_resource type="PackedScene" uid="uid://ctawk608inmq7" path="res://assets/steve.tscn" id="1_f3ibi"]
+[ext_resource type="Material" uid="uid://b0ya3v8j1xsdx" path="res://imports/material-block.tres" id="1_stqm5"]
 [ext_resource type="Script" path="res://scripts/steve.gd" id="2_uqi6x"]
 [ext_resource type="Script" path="res://scripts/Camera.gd" id="3_i7eqc"]
 
@@ -20,15 +22,19 @@ glow_enabled = true
 [sub_resource type="BoxShape3D" id="BoxShape3D_7o21i"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_twler"]
+material = ExtResource("1_stqm5")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_iulns"]
 size = Vector3(30, 1, 30)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3nxjq"]
-albedo_color = Color(0.498039, 0.435294, 0.207843, 1)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g1i7c"]
+normal_enabled = true
+normal_texture = ExtResource("1_6150d")
+uv1_scale = Vector3(0.8, 0.8, 0.8)
+uv1_triplanar = true
 
 [sub_resource type="BoxMesh" id="BoxMesh_41lfq"]
-material = SubResource("StandardMaterial3D_3nxjq")
+material = SubResource("StandardMaterial3D_g1i7c")
 size = Vector3(30, 1, 30)
 
 [node name="Node3D" type="Node3D"]
@@ -41,7 +47,7 @@ transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75
 shadow_enabled = true
 
 [node name="Box" type="RigidBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.14528, 7.15477, -0.447701)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0570698, 0.987833, -7.81444)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Box"]
 shape = SubResource("BoxShape3D_7o21i")
@@ -58,9 +64,9 @@ shape = SubResource("BoxShape3D_iulns")
 mesh = SubResource("BoxMesh_41lfq")
 
 [node name="Steve" parent="." instance=ExtResource("1_f3ibi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.190582, 1, 11.6346)
 script = ExtResource("2_uqi6x")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.857023, 0.515277, 0, -0.515277, 0.857023, 0, 6, 5)
+transform = Transform3D(1, 0, 0, 0, 0.857024, 0.515277, 0, -0.515277, 0.857024, 0, 8.14938, 25.1884)
 script = ExtResource("3_i7eqc")
