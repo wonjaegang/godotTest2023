@@ -1,0 +1,64 @@
+[gd_scene load_steps=10 format=3 uid="uid://csa1wni1tfipx"]
+
+[ext_resource type="Texture2D" uid="uid://d2fkrsnqjuhfp" path="res://imports/block_PavingStones28_col.jpg" id="1_kxbk7"]
+[ext_resource type="Texture2D" uid="uid://dxsf51x4j1qof" path="res://imports/block_PavingStones28_rgh.jpg" id="2_88kyl"]
+[ext_resource type="Texture2D" uid="uid://gk08ihjouefw" path="res://imports/block_PavingStones28_nrm.jpg" id="3_vxa8f"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_htudb"]
+resource_name = "material-block"
+cull_mode = 2
+albedo_color = Color(0.552941, 0.552941, 0.552941, 1)
+albedo_texture = ExtResource("1_kxbk7")
+metallic_texture = ExtResource("2_88kyl")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("2_88kyl")
+roughness_texture_channel = 1
+normal_enabled = true
+normal_scale = 2.0
+normal_texture = ExtResource("3_vxa8f")
+uv1_triplanar = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_ndfrb"]
+material = SubResource("StandardMaterial3D_htudb")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_tgpsb"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r20wt"]
+resource_name = "material-block"
+cull_mode = 2
+albedo_color = Color(0.282353, 0.282353, 0.282353, 1)
+albedo_texture = ExtResource("1_kxbk7")
+metallic_texture = ExtResource("2_88kyl")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("2_88kyl")
+roughness_texture_channel = 1
+normal_enabled = true
+normal_scale = 2.0
+normal_texture = ExtResource("3_vxa8f")
+uv1_triplanar = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_bdpob"]
+material = SubResource("StandardMaterial3D_r20wt")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gyvll"]
+
+[node name="Block" type="Node3D"]
+
+[node name="Block1" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_ndfrb")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Block1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Block1/StaticBody3D"]
+shape = SubResource("BoxShape3D_tgpsb")
+
+[node name="Block2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.82617, 0, 0)
+mesh = SubResource("BoxMesh_bdpob")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Block2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Block2/StaticBody3D"]
+shape = SubResource("BoxShape3D_gyvll")

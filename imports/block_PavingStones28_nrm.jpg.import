@@ -2,10 +2,10 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dcghjxbwauvah"
-path.etc2="res://.godot/imported/block_PavingStones28_nrm.jpg-5554a3c2f2630963ec2b8b94e4fe76d6.etc2.ctex"
+uid="uid://gk08ihjouefw"
+path.s3tc="res://.godot/imported/block_PavingStones28_nrm.jpg-5554a3c2f2630963ec2b8b94e4fe76d6.s3tc.ctex"
 metadata={
-"imported_formats": ["etc2_astc"],
+"imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={}
@@ -13,7 +13,7 @@ generator_parameters={}
 [deps]
 
 source_file="res://imports/block_PavingStones28_nrm.jpg"
-dest_files=["res://.godot/imported/block_PavingStones28_nrm.jpg-5554a3c2f2630963ec2b8b94e4fe76d6.etc2.ctex"]
+dest_files=["res://.godot/imported/block_PavingStones28_nrm.jpg-5554a3c2f2630963ec2b8b94e4fe76d6.s3tc.ctex"]
 
 [params]
 
