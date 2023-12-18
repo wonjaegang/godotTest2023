@@ -3,9 +3,9 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cdbrjj8dpai07"
-path.s3tc="res://.godot/imported/playerball_luxo.png-ef50e02e4d997c6f965f620f0dfa8804.s3tc.ctex"
+path.etc2="res://.godot/imported/playerball_luxo.png-ef50e02e4d997c6f965f620f0dfa8804.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={}
@@ -13,7 +13,7 @@ generator_parameters={}
 [deps]
 
 source_file="res://imports/playerball_luxo.png"
-dest_files=["res://.godot/imported/playerball_luxo.png-ef50e02e4d997c6f965f620f0dfa8804.s3tc.ctex"]
+dest_files=["res://.godot/imported/playerball_luxo.png-ef50e02e4d997c6f965f620f0dfa8804.etc2.ctex"]
 
 [params]
 
